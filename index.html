@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishnukumar R | Aspiring Full Stack Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Vishnukumar R, a Computer Science Engineering student and aspiring Full Stack Developer interested in Full Stack Development, Artificial Intelligence, Data Science, and innovative real-world projects.">
+  <meta name="author" content="Vishnukumar R">
+  <meta name="keywords" content="Vishnukumar R, Full Stack Developer, Computer Science, AI, React, Node.js, Python, Portfolio, RVS College of Engineering">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vishnukumar R | Aspiring Full Stack Developer">
+  <meta property="og:description" content="Portfolio of Vishnukumar R — CSE Student, Aspiring Full Stack Developer, and AI Enthusiast.">
+  <meta property="og:image" content="/assets/profile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Three.js (for 3D ambient scene) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- 3D Interactive WebGL Background Canvas Container -->
+  <div id="bg-canvas-container" aria-hidden="true"></div>
+  <div class="bg-ambient-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-ambient-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-wrapper">
+
+    <!-- 1. Floating Glass Navigation Bar -->
+    <header class="navbar-wrapper">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Brand with Real Circular Profile Image -->
+        <a href="#hero" class="nav-brand" aria-label="Vishnukumar R Home">
+          <div class="nav-brand-avatar-box">
+            <img id="nav-profile-img" src="/assets/profile.jpg" alt="Vishnukumar R" class="nav-brand-avatar-img">
+          </div>
+          <div class="nav-brand-text">
+            <span class="nav-brand-name">Vishnukumar R</span>
+            <span class="nav-brand-sub">CSE &bull; Aspiring Full Stack Developer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Items (Theme Toggle, Resume Button, Mobile Hamburger) -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">
+            <!-- Sun Icon (for dark mode) -->
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (for light mode) -->
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <button class="btn btn-secondary btn-sm nav-resume-btn resume-download-btn" aria-label="Download Resume">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Resume</span>
+          </button>
+
+          <!-- Mobile Nav Toggle -->
+          <button class="mobile-nav-toggle" aria-label="Open mobile menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" aria-label="Mobile Menu">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About Me</a>
+      <a href="#education" class="mobile-nav-link">Education</a>
+      <a href="#skills" class="mobile-nav-link">Technical Skills</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#experience" class="mobile-nav-link">Experience & Activities</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <button class="btn btn-primary btn-sm resume-download-btn" style="margin-top: 0.5rem;">
+        <span>Download Resume PDF</span>
+      </button>
+    </div>
+
+    <main id="main-content">
+
+      <!-- ====================================================================
+           2. HERO SECTION
+           ==================================================================== -->
+      <section id="hero" class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+
+            <!-- Hero Left: Content -->
+            <div class="hero-content">
+              
+              <!-- Live Status Capsule -->
+              <div class="hero-badge-capsule">
+                <span class="pulse-dot"></span>
+                <span class="hero-badge-text">Open for Internships & Projects</span>
+              </div>
+
+              <!-- Main Name Heading -->
+              <h1 class="hero-name">
+                Hi, I'm <span class="hero-name-gradient">Vishnukumar R</span>
+              </h1>
+
+              <!-- Role -->
+              <div class="hero-title-role">
+                <span>Aspiring Full Stack Developer</span>
+              </div>
+
+              <!-- Personal Hero Tagline Capsule -->
+              <div class="hero-tagline-card">
+                "Still learning, still struggling, but never willing to give up"
+              </div>
+
+              <!-- Bio Statement -->
+              <p class="hero-bio">
+                I am a B.E. Computer Science and Engineering student at RVS College of Engineering and Technology with a strong interest in Full Stack Development and Artificial Intelligence. I enjoy learning new technologies and applying them to solve real-world problems through projects and practical experience. I am continuously improving my technical and problem-solving skills while preparing for opportunities in the software industry.
+              </p>
+
+              <!-- Call To Action Buttons -->
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                  <span>View My Projects</span>
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+
+                <button class="btn btn-secondary resume-download-btn">
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download Resume</span>
+                </button>
+
+                <a href="#contact" class="btn btn-secondary">
+                  <span>Let's Connect</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Hero Right: 3D Rounded-Rectangle Profile Frame -->
+            <div class="hero-image-wrapper">
+              <div class="profile-frame-container" id="hero-profile-container">
+                <div class="profile-ambient-glow"></div>
+                <div class="profile-frame-inner">
+                  <img
+                    id="hero-profile-img"
+                    src="/assets/profile.jpg"
+                    alt="Vishnukumar R - Aspiring Full Stack Developer"
+                    class="profile-image-elem"
+                    loading="eager"
+                  >
+                </div>
+                <!-- Floating Info Badge on Frame -->
+                <div class="profile-floating-tag">
+                  <span style="color: var(--accent-cyan);">⚡</span>
+                  <span>B.E. CSE &bull; Continuous Learner</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           3. ABOUT ME SECTION
+           ==================================================================== -->
+      <section id="about" class="section">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Profile Overview</span>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">A glimpse into my academic foundation, technical passions, and engineering mindset.</p>
+          </div>
+
+          <div class="about-grid">
+            <!-- Main Glass Summary Card -->
+            <div class="glass-card about-main-card">
+              <div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 1rem; color: var(--text-primary);">
+                  Engineering Practical Solutions with Code & Curiosity
+                </h3>
+                <p class="about-summary-text">
+                  I am a dedicated Computer Science and Engineering student at RVS College of Engineering and Technology. My passion lies at the intersection of <strong>Full Stack Web Development</strong> and <strong>Artificial Intelligence</strong>. Rather than just memorizing theory, I actively build functional systems, experiment with new libraries, and solve real challenges.
+                </p>
+                <p class="about-summary-text" style="margin-bottom: 0;">
+                  Whether developing predictive IoT platforms, creating specialized healthcare web applications, or publishing academic research on typing analytics, I approach every project with continuous discipline, grit, and a strong drive to learn.
+                </p>
+              </div>
+
+              <!-- Resume Button in About -->
+              <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">Looking for placement & internship opportunities</span>
+                <button class="btn btn-secondary btn-sm resume-download-btn">
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download Full Resume</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Information Cards Grid -->
+            <div class="about-stats-grid">
+              
+              <!-- Card 1: Degree -->
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="stat-label">Degree</div>
+                  <div class="stat-value">B.E. CSE</div>
+                  <div class="stat-sub">RVS College of Engg. & Tech.</div>
+                </div>
+              </div>
+
+              <!-- Card 2: Academic Stage -->
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div>
+                  <div class="stat-label">Current Stage</div>
+                  <div class="stat-value">III Year &bull; V Sem</div>
+                  <div class="stat-sub">Batch 2024 – 2028</div>
+                </div>
+              </div>
+
+              <!-- Card 3: Career Focus -->
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="stat-label">Career Focus</div>
+                  <div class="stat-value">Full Stack Dev</div>
+                  <div class="stat-sub">Modern Web & Systems</div>
+                </div>
+              </div>
+
+              <!-- Card 4: Special Interest -->
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="stat-label">Special Interest</div>
+                  <div class="stat-value">AI & Data</div>
+                  <div class="stat-sub">Intelligent Applications</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. EDUCATION SECTION
+           ==================================================================== -->
+      <section id="education" class="section section-compact">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Academic Background</span>
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Higher education milestones and academic achievements.</p>
+          </div>
+
+          <div class="glass-card education-card">
+            
+            <!-- Left Side: Program Details -->
+            <div>
+              <h3 class="edu-degree">B.E. Computer Science and Engineering</h3>
+              <div class="edu-institution">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M16 11h2M16 15h2M10 21V11h4v10M12 3l9 4H3l9-4z"></path>
+                </svg>
+                <span>RVS College of Engineering and Technology</span>
+              </div>
+
+              <!-- Metadata Pills -->
+              <div class="edu-meta-pills">
+                <span class="meta-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Duration: 2024 – 2028
+                </span>
+                <span class="meta-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+                  Year: III Year
+                </span>
+                <span class="meta-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  Semester: V Semester
+                </span>
+              </div>
+
+              <!-- Core Highlights -->
+              <ul class="edu-bullet-list">
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Rigorous coursework encompassing Data Structures, Object-Oriented Programming, and Database Management Systems.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Hands-on laboratory experimentation in web architectures, software design, and applied machine learning principles.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Actively engaged in academic conferences, research papers, and technical collaborative events.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Side: CGPA Spotlight Box -->
+            <div class="cgpa-display-box">
+              <span class="cgpa-tag">Cumulative GPA</span>
+              <div class="cgpa-score">8.7</div>
+              <span class="cgpa-scale">Scale of 10.0</span>
+              <div class="cgpa-status">★ First Class Standing</div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           5. TECHNICAL SKILLS SECTION
+           ==================================================================== -->
+      <section id="skills" class="section">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Technical Competencies</span>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Technologies, frameworks, and foundational concepts I am actively practicing, learning, and applying in projects.</p>
+          </div>
+
+          <div class="skills-container">
+
+            <!-- Category 1: Programming -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Programming</h3>
+                </div>
+                <p class="skill-cat-desc">Core languages used for problem solving and software logic</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">C</span>
+                <span class="skill-chip">Java</span>
+                <span class="skill-chip">Python</span>
+              </div>
+            </div>
+
+            <!-- Category 2: Web Development -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Web Development</h3>
+                </div>
+                <p class="skill-cat-desc">Building responsive, accessible, and dynamic user interfaces</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">HTML</span>
+                <span class="skill-chip">CSS</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">React.js</span>
+              </div>
+            </div>
+
+            <!-- Category 3: Backend / Full Stack -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                      <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                      <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Backend / Full Stack</h3>
+                </div>
+                <p class="skill-cat-desc">Server runtime, routing, and scalable web API architecture</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+                <span class="skill-chip">REST API concepts</span>
+              </div>
+            </div>
+
+            <!-- Category 4: Database -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Database</h3>
+                </div>
+                <p class="skill-cat-desc">Relational data modeling, querying, and schema management</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">SQL</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">DBMS</span>
+              </div>
+            </div>
+
+            <!-- Category 5: AI / Data -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">AI / Data</h3>
+                </div>
+                <p class="skill-cat-desc">Intelligent systems, data exploration, and analytics</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">Artificial Intelligence</span>
+                <span class="skill-chip">Machine Learning fundamentals</span>
+                <span class="skill-chip">Data Science fundamentals</span>
+                <span class="skill-chip">Data Analysis</span>
+              </div>
+            </div>
+
+            <!-- Category 6: Development Tools -->
+            <div class="glass-card skill-category-card">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Development Tools</h3>
+                </div>
+                <p class="skill-cat-desc">Toolchain for version control, coding, and deployment</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">Git</span>
+                <span class="skill-chip">GitHub</span>
+                <span class="skill-chip">VS Code</span>
+                <span class="skill-chip">Netlify</span>
+              </div>
+            </div>
+
+            <!-- Category 7: Core Computer Science -->
+            <div class="glass-card skill-category-card" style="grid-column: 1 / -1;">
+              <div>
+                <div class="skill-card-header">
+                  <div class="skill-cat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="6" y1="3" x2="6" y2="15"></line>
+                      <circle cx="18" cy="6" r="3"></circle>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <path d="M18 9a9 9 0 0 1-9 9"></path>
+                    </svg>
+                  </div>
+                  <h3 class="skill-cat-title">Core Computer Science</h3>
+                </div>
+                <p class="skill-cat-desc">Fundamental engineering principles governing computational design & logic</p>
+              </div>
+              <div class="skill-chips-list">
+                <span class="skill-chip">Data Structures</span>
+                <span class="skill-chip">Object-Oriented Programming (OOP)</span>
+                <span class="skill-chip">Database Management Systems (DBMS)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="skill-status-note">
+            * Note: Displayed as areas of active learning, practice, and practical implementation.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. LANGUAGES SECTION
+           ==================================================================== -->
+      <section id="languages" class="section section-compact">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Communication</span>
+            <h2 class="section-title">Languages</h2>
+            <p class="section-subtitle">Multilingual communication capabilities for technical and global collaboration.</p>
+          </div>
+
+          <div class="languages-grid">
+            
+            <!-- Language 1: English -->
+            <div class="glass-card lang-card">
+              <span class="lang-name">English</span>
+              <span class="lang-badge">Fluent</span>
+              <p class="lang-desc">Professional technical communication, presentations, and technical documentation.</p>
+            </div>
+
+            <!-- Language 2: Tamil -->
+            <div class="glass-card lang-card">
+              <span class="lang-name">Tamil</span>
+              <span class="lang-badge">Bilingual / Native</span>
+              <p class="lang-desc">Native conversational fluency, cultural expression, and interpersonal collaboration.</p>
+            </div>
+
+            <!-- Language 3: Japanese -->
+            <div class="glass-card lang-card">
+              <span class="lang-name">Japanese</span>
+              <span class="lang-badge">Elementary</span>
+              <p class="lang-desc">Foundational vocabulary, introductory conversation, and active script learning.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. FEATURED PROJECTS SECTION (3 Large 3D Cards)
+           ==================================================================== -->
+      <section id="projects" class="section">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Applied Engineering</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Real-world applications spanning AI systems, IoT predictive failure detection, and women's health companions.</p>
+          </div>
+
+          <div class="projects-container">
+
+            <!-- PROJECT 01: AI Sentinel -->
+            <article class="glass-card project-card">
+              
+              <div class="project-card-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <span class="project-id-badge">01</span>
+                  <div>
+                    <h3 class="project-title">AI Sentinel</h3>
+                    <span class="project-category-tag">AI + IoT + Predictive Maintenance + Worker Safety</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Highlight Callout -->
+              <div class="project-highlight-box">
+                Affordable AI-based predictive machine failure and worker safety solution for MSMEs.
+              </div>
+
+              <!-- Description -->
+              <p class="project-desc">
+                AI Sentinel is an inexpensive platform that uses artificial intelligence and Internet of Things (IoT) technologies to support predictive maintenance and worker safety, specifically designed for small and medium-sized manufacturing businesses.
+              </p>
+
+              <!-- Key Features -->
+              <ul class="project-features-list">
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Predictive machine failure alerts to minimize industrial downtime</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Sensor-based worker safety zone monitoring & hazard detection</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cost-effective microcontroller integration designed for MSME budgets</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Centralized web dashboard for real-time telemetry visualization</span>
+                </li>
+              </ul>
+
+              <!-- Footer with Tech Tags -->
+              <div class="project-footer">
+                <div class="project-tech-tags">
+                  <span class="tech-tag">AI</span>
+                  <span class="tech-tag">IoT</span>
+                  <span class="tech-tag">ESP32</span>
+                  <span class="tech-tag">Predictive Maintenance</span>
+                  <span class="tech-tag">Machine Learning</span>
+                  <span class="tech-tag">Web Dashboard</span>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 02: UyirNila -->
+            <article class="glass-card project-card">
+              
+              <div class="project-card-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <span class="project-id-badge">02</span>
+                  <div>
+                    <h3 class="project-title">UyirNila – AI-Powered Women’s Health Companion</h3>
+                    <span class="project-category-tag">Web Application &bull; HealthTech</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Highlight Callout -->
+              <div class="project-highlight-box">
+                Rule-based AI companion designed to track, analyze, and support women's health patterns.
+              </div>
+
+              <!-- Description -->
+              <p class="project-desc">
+                Designed the application to track and analyze women’s health patterns. Developed a rule-based AI system to provide personalized recommendations based on user inputs.
+              </p>
+
+              <!-- Key Features -->
+              <ul class="project-features-list">
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cycle tracking and menstrual wellness pattern analysis</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Mood analysis based on daily logging and symptom checkpoints</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>AI-based health suggestions tailored to personal cycle phases</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Personalized recommendations delivered via rule-based AI system</span>
+                </li>
+              </ul>
+
+              <!-- Footer with Tech Tags and Live Demo Button -->
+              <div class="project-footer">
+                <div class="project-tech-tags">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">AI</span>
+                  <span class="tech-tag">Web Application</span>
+                  <span class="tech-tag">Netlify</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://uyirnila.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 03: NeuroAI -->
+            <article class="glass-card project-card">
+              
+              <div class="project-card-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <span class="project-id-badge">03</span>
+                  <div>
+                    <h3 class="project-title">NeuroAI</h3>
+                    <div class="project-subtitle">AI-based System for Early Neurological Risk Prediction using OS-level Typing Analytics</div>
+                  </div>
+                </div>
+
+                <span class="pub-badge-ribbon">★ Published Research</span>
+              </div>
+
+              <!-- Highlight Callout -->
+              <div class="project-highlight-box">
+                Peer-Reviewed Research: Early neurological risk prediction via non-invasive OS-level typing telemetry.
+              </div>
+
+              <!-- Description -->
+              <p class="project-desc">
+                An AI-based system designed for early neurological risk prediction using OS-level typing analytics. Published in NCRCTIT’26 Conference Proceedings at RVS Technical Campus, Coimbatore on March 12, 2026 (ISBN: 978-81-999288-7-9).
+              </p>
+
+              <!-- Key Features -->
+              <ul class="project-features-list">
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Non-invasive OS-level keystroke telemetry and cadence timing analysis</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Machine learning models for detecting micro-irregularities in typing rhythms</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Early neurological risk indicator framework for preventative healthcare</span>
+                </li>
+                <li class="project-feature-item">
+                  <svg class="project-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Published academic research with indexed ISBN documentation</span>
+                </li>
+              </ul>
+
+              <!-- Footer with Tech Tags -->
+              <div class="project-footer">
+                <div class="project-tech-tags">
+                  <span class="tech-tag">Artificial Intelligence</span>
+                  <span class="tech-tag">Machine Learning</span>
+                  <span class="tech-tag">Typing Analytics</span>
+                  <span class="tech-tag">Predictive Analytics</span>
+                </div>
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           8. DEDICATED PUBLICATION SPOTLIGHT
+           ==================================================================== -->
+      <section class="section section-compact">
+        <div class="container">
+          
+          <div class="glass-card publication-card">
+            <span class="pub-badge-ribbon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              Published Academic Research
+            </span>
+
+            <h3 class="pub-title">
+              NeuroAI – AI-based System for Early Neurological Risk Prediction using OS-level Typing Analytics
+            </h3>
+
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+              A published research paper detailing an intelligent diagnostic framework that detects subtle neuromuscular timing patterns during regular operating system usage to provide early warning indicators for neurological risks.
+            </p>
+
+            <div class="pub-meta-grid">
+              <div class="pub-meta-item">
+                <span class="pub-meta-label">Conference Proceedings</span>
+                <span class="pub-meta-val">NCRCTIT’26</span>
+              </div>
+              <div class="pub-meta-item">
+                <span class="pub-meta-label">Location / Venue</span>
+                <span class="pub-meta-val">RVS Technical Campus, Coimbatore</span>
+              </div>
+              <div class="pub-meta-item">
+                <span class="pub-meta-label">Date of Publication</span>
+                <span class="pub-meta-val">March 12, 2026</span>
+              </div>
+              <div class="pub-meta-item">
+                <span class="pub-meta-label">Publication ISBN</span>
+                <span class="pub-meta-val pub-isbn-tag">978-81-999288-7-9</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           9. EXPERIENCE & HACKATHONS SECTION
+           ==================================================================== -->
+      <section id="experience" class="section">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Professional Experience & Activities</span>
+            <h2 class="section-title">Experience & Innovation</h2>
+            <p class="section-subtitle">Practical industry exposure and active participation in competitive technical events.</p>
+          </div>
+
+          <div class="grid-2">
+
+            <!-- Experience Card: SkillSync -->
+            <div class="glass-card">
+              <div class="exp-card-header">
+                <div>
+                  <h3 class="exp-role-title">Data Science Intern</h3>
+                  <div class="exp-company-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    <span>SkillSync</span>
+                  </div>
+                </div>
+                <span class="exp-type-tag">Internship</span>
+              </div>
+
+              <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+                Created a dashboard using Data Science-related concepts and practical data analysis work.
+              </p>
+
+              <ul class="exp-bullet-list">
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Applied practical Data Science techniques to process and analyze dataset patterns.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Engineered an interactive dashboard for clear visual representation of data insights.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-dot"></span>
+                  <span>Gained hands-on experience in exploratory data analysis and structured data workflows.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Hackathons & Activities Card -->
+            <div class="glass-card">
+              <div class="exp-card-header">
+                <div>
+                  <h3 class="exp-role-title">Hackathons & Activities</h3>
+                  <div class="exp-company-badge" style="color: var(--accent-violet);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Technical Challenges & Innovation</span>
+                  </div>
+                </div>
+                <span class="exp-type-tag" style="background: var(--accent-violet-light); color: var(--accent-violet);">Active</span>
+              </div>
+
+              <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                Actively participating in collaborative hackathons and innovation activities, engineering real-world solutions across multidisciplinary domains:
+              </p>
+
+              <div class="hackathon-focus-grid">
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">🤖 AI & Machine Learning</span>
+                  <span class="hack-focus-desc">Intelligent system models & pipelines</span>
+                </div>
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">💻 Full Stack Development</span>
+                  <span class="hack-focus-desc">End-to-end responsive web apps</span>
+                </div>
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">📡 IoT Solutions</span>
+                  <span class="hack-focus-desc">Hardware telemetry & web connectivity</span>
+                </div>
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">📊 Data Science</span>
+                  <span class="hack-focus-desc">Insight extraction & analytics</span>
+                </div>
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">🧩 Problem Solving</span>
+                  <span class="hack-focus-desc">Algorithmic logic & execution</span>
+                </div>
+                <div class="hack-focus-item">
+                  <span class="hack-focus-title">💡 Practical Innovation</span>
+                  <span class="hack-focus-desc">Real-world impact & engineering</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           10. SOCIAL / CONNECT LINKS
+           ==================================================================== -->
+      <section class="section section-compact">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Online Presence</span>
+            <h2 class="section-title">Connect With Me</h2>
+            <p class="section-subtitle">Explore my professional profiles, code repositories, and algorithmic practice.</p>
+          </div>
+
+          <div class="social-links-grid">
+            
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/vishnukumar-r-108539339" target="_blank" rel="noopener noreferrer" class="glass-card social-card" id="social-linkedin">
+              <div class="social-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </div>
+              <div class="social-info">
+                <span class="social-platform-name">LinkedIn</span>
+                <span class="social-handle">in/vishnukumar-r-108539339 ↗</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/vishnukumar-r947" target="_blank" rel="noopener noreferrer" class="glass-card social-card" id="social-github">
+              <div class="social-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </div>
+              <div class="social-info">
+                <span class="social-platform-name">GitHub</span>
+                <span class="social-handle">github.com/vishnukumar-r947 ↗</span>
+              </div>
+            </a>
+
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/u/buddy_code/" target="_blank" rel="noopener noreferrer" class="glass-card social-card" id="social-leetcode">
+              <div class="social-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 4.818 3.655 5.892 5.892 0 0 0 3.25-.66 5.88 5.88 0 0 0 2.257-2.37l3.86-4.135 5.406-5.788a1.379 1.379 0 0 0-1.004-2.28 1.365 1.365 0 0 0-.965.438l-4.708 5.043-3.854 4.126a3.176 3.176 0 0 1-1.218 1.282 3.14 3.14 0 0 1-1.74.354 3.17 3.17 0 0 1-2.585-1.966 3.12 3.12 0 0 1-.186-.547 3.003 3.003 0 0 1-.034-1.272 2.923 2.923 0 0 1 .65-1.139l3.854-4.126 5.406-5.788A1.364 1.364 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                </svg>
+              </div>
+              <div class="social-info">
+                <span class="social-platform-name">LeetCode</span>
+                <span class="social-handle">leetcode.com/u/buddy_code ↗</span>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           11. CONTACT SECTION
+           ==================================================================== -->
+      <section id="contact" class="section">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Have an opportunity, collaboration, or question? Send me a message and I'll get back to you promptly.</p>
+          </div>
+
+          <div class="contact-grid">
+            
+            <!-- Direct Contact Info Card -->
+            <div class="glass-card contact-info-card">
+              <div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+                  Let's Discuss New Opportunities
+                </h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                  I am actively seeking software internships, technical collaboration, and placement opportunities. Feel free to contact me directly or through the message form.
+                </p>
+
+                <!-- Contact Methods List -->
+                <div class="contact-methods-list">
+                  
+                  <!-- Email Item -->
+                  <div class="contact-method-item">
+                    <div class="contact-method-left">
+                      <div class="contact-method-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                      </div>
+                      <div>
+                        <div class="contact-method-title">Email</div>
+                        <div class="contact-method-val" id="display-email">vishnunlp10th@gmail.com</div>
+                      </div>
+                    </div>
+                    <button class="copy-btn" data-copy="vishnunlp10th@gmail.com" title="Copy email address" aria-label="Copy email">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                  </div>
+
+                  <!-- Phone Item -->
+                  <div class="contact-method-item">
+                    <div class="contact-method-left">
+                      <div class="contact-method-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                      </div>
+                      <div>
+                        <div class="contact-method-title">Phone</div>
+                        <div class="contact-method-val" id="display-phone">+91 99401 23510</div>
+                      </div>
+                    </div>
+                    <button class="copy-btn" data-copy="9940123510" title="Copy phone number" aria-label="Copy phone">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                  </div>
+
+                  <!-- LinkedIn Item -->
+                  <div class="contact-method-item">
+                    <div class="contact-method-left">
+                      <div class="contact-method-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                      </div>
+                      <div>
+                        <div class="contact-method-title">LinkedIn</div>
+                        <div class="contact-method-val">in/vishnukumar-r-108539339</div>
+                      </div>
+                    </div>
+                    <a href="https://linkedin.com/in/vishnukumar-r-108539339" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Open LinkedIn" aria-label="Open LinkedIn">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div>
+                <p style="font-size: 0.825rem; color: var(--text-muted);">
+                  ⚡ Typically responds within 24–48 hours.
+                </p>
+              </div>
+            </div>
+
+            <!-- Functional Contact Form -->
+            <div class="glass-card">
+              <form id="contact-form" class="contact-form" novalidate>
+                
+                <!-- Status feedback box -->
+                <div id="form-status-box" class="form-status" role="alert"></div>
+
+                <!-- Name Input -->
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Your Name *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Johnson" required autocomplete="name">
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="alex@company.com" required autocomplete="email">
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Message *</label>
+                  <textarea id="contact-message" name="message" class="form-textarea" placeholder="Hello Vishnukumar, I would like to discuss an opportunity regarding..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%;">
+                  <span>Send Message</span>
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         12. FOOTER
+         ==================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          
+          <div>
+            <div class="footer-name">Vishnukumar R</div>
+            <div class="footer-role">Aspiring Full Stack Developer</div>
+          </div>
+
+          <p class="footer-tagline">
+            "Still learning, still struggling, but never willing to give up."
+          </p>
+
+          <!-- Social Icon Shortcuts -->
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com/in/vishnukumar-r-108539339" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" aria-label="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="https://github.com/vishnukumar-r947" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://leetcode.com/u/buddy_code/" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" aria-label="LeetCode Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 4.818 3.655 5.892 5.892 0 0 0 3.25-.66 5.88 5.88 0 0 0 2.257-2.37l3.86-4.135 5.406-5.788a1.379 1.379 0 0 0-1.004-2.28 1.365 1.365 0 0 0-.965.438l-4.708 5.043-3.854 4.126a3.176 3.176 0 0 1-1.218 1.282 3.14 3.14 0 0 1-1.74.354 3.17 3.17 0 0 1-2.585-1.966 3.12 3.12 0 0 1-.186-.547 3.003 3.003 0 0 1-.034-1.272 2.923 2.923 0 0 1 .65-1.139l3.854-4.126 5.406-5.788A1.364 1.364 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+            </a>
+          </div>
+
+          <div class="footer-copy">
+            &copy; 2026 Vishnukumar R. All rights reserved.
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification Element -->
+    <div class="toast-notice" role="status" aria-live="polite"></div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
