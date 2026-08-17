@@ -226,29 +226,20 @@ function initContactForm() {
       const config = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.contactService) || {};
       let isSuccess = false;
 
-      if (config.provider === "formspree" && config.formspreeEndpoint && !config.formspreeEndpoint.includes("YOUR_FORM_ID")) {
-        const response = await fetch(config.formspreeEndpoint, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: JSON.stringify({ name, email, message })
-        });
-        isSuccess = response.ok;
-      } else if (config.provider === "emailjs" && typeof emailjs !== "undefined" && config.emailjs?.publicKey && !config.emailjs.publicKey.includes("YOUR_")) {
-        await emailjs.send(config.emailjs.serviceId, config.emailjs.templateId, {
-          from_name: name,
-          from_email: email,
-          message: message
-        });
-        isSuccess = true;
-      } else {
-        // Safe simulation if endpoint not configured yet
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        isSuccess = true;
-      }
+      const response = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        })
+      });
 
+      isSuccess = response.ok;
       if (isSuccess) {
         showFormStatus("Message sent successfully!", "success");
         form.reset();
